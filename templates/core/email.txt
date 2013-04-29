@@ -1,0 +1,13 @@
+You just checked in @ {{ venue.venue_name }}!
+
+Don't forget to note down what you ate here today:
+http://remindeat.com/checkin/{{ checkin._id }}
+
+{% if last_checkin %}
+    {% if last_checkin.meals %}
+    Last time you were here you had:
+    {% for meal in last_checkin.meals %}
+    - {{ meal }}
+    {% endfor %}
+    {% endif %}
+{% endif %}

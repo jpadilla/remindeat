@@ -1,0 +1,55 @@
+{% extends "core/common/layout.html" %}
+
+{% block nav %}
+<li><a href="{{ url_for('venues_view') }}">Venues</a></li>
+<li class="active"><a href="{{ url_for('settings_view') }}">Settings</a></li>
+<li><a href="{{ url_for('logout_view') }}">Logout</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="settings clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="span5">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                  {% if category == 'success' %}
+                    You can check out your venues <a href="{{ url_for('venues_view') }}">here.</a>
+                  {% endif %}
+                </div>
+
+                {% endfor %}
+                {% else %}
+                <div class="alert alert-info">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Hey!</strong> You can choose where to receive your reminders, just enter your mobile phone number, email, or both!
+                </div>
+                {% endif %}
+                {% endwith %}
+                <form class="well" action="/settings" method="POST">
+                    <label><strong>Email Address</strong></label>
+                    <input name="email" type="text" class="span3" placeholder="Type something…" value="{% if g.user.email %}{{ g.user.email }}{% endif %}">
+
+                    <label><strong>Mobile Number</strong></label>
+                    <input name="phone" type="text" class="span3" placeholder="Type something…" value="{% if g.user.phone %}{{ g.user.phone }}{% endif %}">
+                    <span class="help-block">Format: 7875555555</span>
+
+                    <label><strong>Remind me</strong></label>
+                    <select class="span3" name="send_on">
+                        <option value="never" {% if g.user.send_on == "never" %}selected{% endif %}>Never</option>
+                        <option value="instantly" {% if g.user.send_on == "instantly" %}selected{% endif %}>Instantly</option>
+                        <option value="300" {% if g.user.send_on == "300" %}selected{% endif %}>5 minutes after</option>
+                        <option value="600" {% if g.user.send_on == "600" %}selected{% endif %}>10 minutes after</option>
+                        <option value="900" {% if g.user.send_on == "900" %}selected{% endif %}>15 minutes after</option>
+                    </select>
+
+                    <button type="submit" class="btn">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

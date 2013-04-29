@@ -1,0 +1,80 @@
+{% extends "core/common/layout.html" %}
+
+{% block nav %}
+{% if data.user %}
+<li class="active"><a href="/">Home</a></li>
+<li><a href="{{ url_for('venues_view') }}">Venues</a></li>
+<li><a href="{{ url_for('logout_view') }}">Logout</a></li>
+{% endif %}
+{% endblock %}
+
+{% block extra_styles %}
+{% set images = ['coffee_flickr.jpeg', 'bar.jpg', 'coffee.jpg', 'cupcake.jpg', 'redvelvet.jpg', 'wafflera.jpg'] %}
+{% set bg = images|random %}
+<style type="text/css">
+    .jumbotron {
+        background: url('{{ config.STATIC_URL }}img/{{ bg }}') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron masthead">
+  <div class="container">
+    <h1>RemindEat</h1>
+    <p>You'll never forget what you ate last time at any restaurant</p>
+    <p><a href="/login" class="btn btn-primary btn-large" onclick="_gaq.push(['_trackEvent', 'Homepage', 'Connect', 'Connect with foursquare']);">Connect with foursquare</a></p>
+  </div>
+</div>
+<div class="bs-docs-social">
+  <div class="container">
+    <ul class="bs-docs-social-buttons">
+      <li class="follow-btn">
+        <a href="https://twitter.com/remindeat" class="twitter-follow-button" data-show-count="false">Follow @remindeat</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+      <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="remindeat" data-related="jpadilla_">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+      <li class="like-btn">
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fremindeat.com&amp;send=false&amp;layout=button_count&amp;width=125&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+
+  <div class="marketing">
+
+    <h1>Introducing RemindEat.</h1>
+    <p class="marketing-byline">Not sure if RemindEat is right for you? Read below.</p>
+
+    <div class="row-fluid">
+      <div class="span4">
+        <img src="static/img/foursquare.png">
+        <h2>Powered by foursquare</h2>
+        <p>Remindeat works with foursquare check-ins and its is completely platform independent, so it doesn't matter if you are using an iPhone, Android, or Blackberry or even their mobile site.</p>
+      </div>
+      <div class="span4">
+        <img src="static/img/sms.png">
+        <h2>SMS or Email.</h2>
+        <p>You can choose to be notified by email and/or SMS, whichever you prefer. You can also choose to be notified as soon as you check-in or 5, 10, 15 minutes after you have checked in.</p>
+      </div>
+      <div class="span4">
+        <img src="static/img/remindeat.png">
+        <h2>Never forget again</h2>
+        <p>With RemindEat you'll be able to keep track of all the restaurants you've been too, what you ate and when.</p>
+      </div>
+    </div>
+
+    <hr class="soften">
+
+  </div>
+
+</div>
+{% endblock %}

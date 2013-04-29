@@ -1,0 +1,27 @@
+{% extends "core/common/layout.html" %}
+
+{% block nav %}
+<li class="active"><a href="{{ url_for('venues_view') }}">Venues</a></li>
+<li><a href="{{ url_for('settings_view') }}">Settings</a></li>
+<li><a href="{{ url_for('logout_view') }}">Logout</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="venues">
+    <div class="container">
+        {% if data.venues %}
+        <ul class="nav nav-tabs nav-stacked">
+            {% for venue in data.venues %}
+            <li>
+                <a href="{{ url_for('venue_meals_view', venue_id=venue._id) }}">{{ venue.venue_name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div class="alert alert-info">
+            <strong>Hey!</strong> Once you start check-in into restaurants, you'll see a list of them right here.
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

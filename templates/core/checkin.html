@@ -1,0 +1,50 @@
+{% extends "core/common/layout.html" %}
+
+{% block nav %}
+<li class="active"><a href="{{ url_for('venues_view') }}">Venues</a></li>
+<li><a href="{{ url_for('settings_view') }}">Settings</a></li>
+<li><a href="{{ url_for('logout_view') }}">Logout</a></li>
+{% endblock %}
+
+{% block script_templates %}
+    <script id="meal-control" type="text/template">
+        <input class="input-large" type="text" name="meal" placeholder="Pizza, burrito, sushi...">
+        <a href="#" class="add-meal"><i class="icon-plus-sign icon-large"></i></a>
+    </script>
+    <script id="remove-control" type="text/template">
+        <a href="#" class="remove-meal"><i class="icon-minus-sign icon-large"></i></a>
+    </script>
+{% endblock %}
+
+{% block content %}
+<div class="checkin">
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="row">
+            <div class="span7">
+                <form class="form-horizontal" action="{{ url_for('add_meal_view', checkin_id=data.checkin._id) }}" method="POST">
+                    <legend>{{ data.checkin.venue.venue_name }} - {{ data.checkin.createdAt.strftime('%m/%d/%Y') }}</legend>
+                    <fieldset>
+                        {% for meal in data.checkin.meals %}
+                        <input class="input-large" type="text" name="meal" value="{{ meal }}">
+                        <a href="#" class="remove-meal"><i class="icon-minus-sign icon-large"></i></a>
+                        {% endfor %}
+                        <input class="input-large" type="text" name="meal" placeholder="Pizza, burrito, sushi...">
+                        <a href="#" class="add-meal"><i class="icon-plus-sign icon-large"></i></a>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <a href="{{ url_for('venue_meals_view', venue_id=data.checkin.venue._id) }}" class="btn">Cancel</a>
+                        </div>
+                    </fieldset>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

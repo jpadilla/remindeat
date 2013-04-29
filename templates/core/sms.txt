@@ -1,0 +1,2 @@
+Hey! What are you eating?
+http://remindeat.com/c/{{ checkin._id }}

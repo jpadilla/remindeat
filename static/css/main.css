@@ -1,0 +1,365 @@
+.settings,.venues,.checkins,.checkin {
+    margin-top: 100px;
+}
+
+input[name="meal"] {
+    margin: 5px 0;
+}
+
+a.add-meal {
+    color: #5BB75B;
+}
+
+a.remove-meal {
+    color: #DA4F49;
+}
+
+a.add-meal i,a.remove-meal i {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+a.add-meal:hover,a.remove-meal:hover {
+    text-decoration: none;
+}
+
+.input-large,.input-xlarge,.input-xxlarge,input[class*="span"],
+select[class*="span"],textarea[class*="span"],.uneditable-input {
+    width: 91%!important;
+}
+
+.checkins-list,.checkin-meals {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.checkin-date {
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 1px 0 #fff inset;
+    color: #444;
+    font-size: 16px;
+    padding: 5px;
+    text-shadow: 0 -1px 0 #fff;
+}
+
+.checkin-date-text {
+    padding: 5px;
+}
+
+.checkin-date:last-child {
+    border-bottom: 0 none;
+    border-radius: 0 0 3px 3px;
+}
+
+.checkins-list {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.checkin-date:first-child {
+    border-radius: 3px 3px 0 0;
+}
+
+.checkin-meals {
+    padding: 0 25px;
+}
+
+.checkin-meal {
+    font-size: 12px;
+    padding: 5px;
+}
+
+.checkin-meal:first-child {
+    border: none;
+    box-shadow: none;
+}
+
+.jumbotron {
+    color: #fff;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+}
+
+.jumbotron h1 {
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.jumbotron p {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+.jumbotron a {
+    color: #FFF;
+    color: rgba(255,255,255,.5);
+}
+
+.jumbotron a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,.25);
+}
+
+.masthead .btn {
+    -moz-border-radius: 6px;
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
+    -webkit-border-radius: 6px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 200;
+    padding: 14px 24px;
+}
+
+.masthead .btn:active {
+    -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+    -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+}
+
+.jumbotron .container {
+    background: transparent;
+    background: rgba(0,0,0,0.5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#50990000,endColorstr=#50990000);
+    padding: 70px 0 80px;
+    width: 100%;
+    zoom: 1;
+}
+
+.masthead {
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.masthead h1 {
+    font-size: 120px;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.masthead p {
+    font-size: 40px;
+    font-weight: 200;
+    line-height: 1.25;
+}
+
+.masthead-links {
+    list-style: none;
+    margin: 0;
+}
+
+.masthead-links li {
+    color: #FFF;
+    color: rgba(255,255,255,.25);
+    display: inline;
+    padding: 0 10px;
+}
+
+.bs-docs-social {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.bs-docs-social-buttons {
+    list-style: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.bs-docs-social-buttons li {
+    display: inline;
+    line-height: 1;
+    padding: 5px 8px;
+    zoom: 1;
+}
+
+.marketing {
+    color: #5a5a5a;
+    text-align: center;
+}
+
+.marketing h1 {
+    font-size: 60px;
+    font-weight: 200;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin: 60px 0 10px;
+}
+
+.marketing h2 {
+    font-size: 28px;
+    font-weight: 200;
+    margin-bottom: 5px;
+}
+
+.marketing p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.marketing .marketing-byline {
+    color: #999;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 25px;
+    margin-bottom: 40px;
+}
+
+.marketing img {
+    display: block;
+    margin: 0 auto 30px;
+}
+
+.footer {
+    background-color: #f5f5f5;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 70px;
+    padding: 50px 0;
+}
+
+.footer p {
+    color: #777;
+    margin-bottom: 0;
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin-right: 10px;
+}
+
+@media (max-width: 980px) {
+    body > .navbar-fixed-top .brand {
+        float: left;
+        margin-left: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+    body {
+        padding-top: 0;
+    }
+
+    .jumbotron {
+        margin-top: -20px;
+    }
+
+    .settings,.venues,.checkins,.checkin {
+        margin-top: 0;
+    }
+
+    .input-large,.input-xlarge,.input-xxlarge,input[class*="span"],
+    select[class*="span"],textarea[class*="span"],.uneditable-input {
+        width: 91%!important;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 0;
+    }
+
+    .jumbotron {
+        margin-left: -20px;
+        margin-right: -20px;
+        margin-top: -20px;
+    }
+
+    .masthead h1 {
+        font-size: 90px;
+    }
+
+    .masthead p,.masthead .btn {
+        font-size: 24px;
+    }
+
+    .marketing .span4 {
+        margin-bottom: 40px;
+    }
+
+    .bs-docs-social {
+        margin: 0 -20px;
+    }
+
+    .settings,.venues,.checkins,.checkin {
+        margin-top: 0;
+    }
+
+    .checkin legend {
+        font-size: 15px;
+    }
+
+    .input-large,.input-xlarge,.input-xxlarge,input[class*="span"],
+    select[class*="span"],textarea[class*="span"],.uneditable-input {
+        width: 93%!important;
+    }
+
+    .footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .footer p {
+        margin-bottom: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 0;
+    }
+
+    h2 small {
+        display: block;
+    }
+
+    .jumbotron h1 {
+        font-size: 60px;
+    }
+
+    .jumbotron p,.jumbotron .btn {
+        font-size: 20px;
+    }
+
+    .jumbotron .btn {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .marketing h1 {
+        font-size: 40px;
+    }
+
+    .settings,.venues,.checkins,.checkin {
+        margin-top: 0;
+    }
+
+    .checkin legend {
+        font-size: 15px;
+    }
+
+    .footer .pull-right {
+        float: none;
+    }
+}
